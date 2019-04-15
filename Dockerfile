@@ -1,10 +1,8 @@
 FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
 
-RUN echo "Installing system dependencies..." && \
+RUN echo "Installing dependencies..." && \
 	apt-get -y --no-install-recommends update && \
-	apt-get -y --no-install-recommends upgrade
-
-RUN echo "Installing OpenPose dependencies..." && \
+	apt-get -y --no-install-recommends upgrade && \
 	apt-get install -y --no-install-recommends \
 	build-essential \
 	cmake \
@@ -32,15 +30,11 @@ RUN echo "Installing OpenPose dependencies..." && \
 	protobuf \
 	opencv-python
 
-RUN echo "Downloading OpenPose" && \
-	git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git
-
-RUN echo "Building OpenPose..." && \
+RUN echo "Downloading and building OpenPose..." && \
+	git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git && \
 	mkdir -p /openpose/build && \
 	cd /openpose/build && \
 	cmake .. && \
 	make -j`nproc`
 
 WORKDIR /openpose
-
-CMD ["sleep", "infinity"]

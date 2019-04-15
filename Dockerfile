@@ -43,6 +43,6 @@ RUN echo "Building OpenPose..." && \
 	cmake .. && \
 	make -j`nproc`
 
-WORKDIR /openpose/build
+WORKDIR /openpose
 
 CMD ["sleep", "infinity"]

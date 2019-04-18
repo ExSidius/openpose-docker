@@ -6,6 +6,7 @@ Ensure that you have `nvidia-docker` installed before you download this image.
 To run the container, use the following commmand - 
 
 ```bash
+xhost +
 docker run -it --net=host -e DISPLAY --runtime=nvidia <container-id>
 ```
 

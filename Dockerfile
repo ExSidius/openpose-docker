@@ -24,12 +24,12 @@ RUN echo "Installing dependencies..." && \
 	opencl-headers \
 	ocl-icd-opencl-dev \
 	libviennacl-dev \
+	libcanberra-gtk-module \
 	libopencv-dev && \
 	python3 -m pip install \
 	numpy \
 	protobuf \
-	opencv-python \
-	libcanberra-gtk-module
+	opencv-python
 
 RUN echo "Downloading and building OpenPose..." && \
 	git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git && \

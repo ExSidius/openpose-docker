@@ -28,7 +28,8 @@ RUN echo "Installing dependencies..." && \
 	python3 -m pip install \
 	numpy \
 	protobuf \
-	opencv-python
+	opencv-python \
+	libcanberra-gtk-module
 
 RUN echo "Downloading and building OpenPose..." && \
 	git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git && \

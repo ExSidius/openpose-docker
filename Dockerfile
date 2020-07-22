@@ -27,7 +27,7 @@ RUN echo "Installing dependencies..." && \
 	libcanberra-gtk-module \
 	libopencv-dev && \
 	python3 -m pip install \
-	numpy \
+	numpy==1.18.5 \
 	protobuf \
 	opencv-python
 
